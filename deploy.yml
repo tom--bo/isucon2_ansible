@@ -1,0 +1,27 @@
+---
+- hosts: webservers
+  sudo: true
+  user: root
+  vars:
+    work_dir: /home
+    repos_dir: "{{ work_dir }}/isucon2"
+    branch: "isucon2"
+    username: "isucon2app"
+    password: "isunageruna"
+    dbname: "isucon2"
+    
+  tasks:
+    - name: Install git
+      yum: pkg=git state=installed
+    - name: git clone
+      git: repo=https://github.com/tagomoris/isucon2.git dest={{ repos_dir }} version={{ branch }}
+    - name: Create MySQL user
+      mysql_user: name={{username}} append_privs=yes password={{password}} priv=*.*:ALL state=present
+    - name: create initial database
+      shell: cat {{repos_dir}}/webapp/config/database/isucon2.sql | mysql -u{{username}} -p{{password}}
+    - name: import initial data
+      shell: cat {{repos_dir}}/webapp/config/database/initial_data.sql | mysql -u{{username}} -p{{password}}
+    - name: update httpd.conf
+      copy: src=static_files/httpd.conf dest=/etc/httpd/conf/httpd.conf
+    - name: httpd restarted
+      service: name=httpd enabled=yes state=restarted
