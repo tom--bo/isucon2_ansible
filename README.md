@@ -6,18 +6,22 @@
 -  host: mac 
 -  target: Google Cloud Platform
 
+- 手動でSELinux切って再起動w
 /etc/sysconfig/selinux
 SELINUX=disabled
 
 
 ## 今後のTODO
 
--  LAMP環境作る
 -  ISUCON2の環境設定
 -  ベンチマーク動かす
+-  varnishとかとか
+
+## Done
+
+-  中止：LAMP環境作る
 -  gcpで動くようにする
 -  nginx入れる
--  varnishとかとか
 
 
 ## 参考等
