@@ -5,6 +5,12 @@
 - name: Copy the EPEL repository definition
   copy: src=epel.repo dest=/etc/yum.repos.d/epel.repo
 
+- name: Copy the EPEL repository definition for nginx
+  copy: src=nginx.repo dest=/etc/yum.repos.d/nginx.repo
+
+# - name: install the nginx rpm from a remote repo
+#   yum: name=http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm state=present
+
 - name: Create the GPG key for EPEL
   copy: src=RPM-GPG-KEY-EPEL-6 dest=/etc/pki/rpm-gpg
 
