@@ -18,6 +18,7 @@
 
 ## 参考等
 
-序盤は以下、ansibleチュートリアル参考。
-http://yteraoka.github.io/ansible-tutorial/
-
+- 序盤は以下、ansibleチュートリアル参考。
+- http://yteraoka.github.io/ansible-tutorial/
+- Google Cloud Platformへのsshアクセス
+- http://qiita.com/NewGyu/items/3a65e837519297951e79
