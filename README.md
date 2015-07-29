@@ -21,3 +21,4 @@
 序盤は以下、ansibleチュートリアル参考。
 http://yteraoka.github.io/ansible-tutorial/
 
+hello!hello!
