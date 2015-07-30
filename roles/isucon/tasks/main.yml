@@ -1,0 +1,19 @@
+---
+
+- name: Install git
+  yum: pkg=git state=installed
+
+- name: git clone
+  git: repo=https://github.com/tagomoris/isucon2.git dest={{ repos_dir }} version={{ branch }}
+  
+- name: restart mysql
+  service: name=mysqld state=restarted
+
+- name: Create MySQL user
+  mysql_user: name={{username}} append_privs=yes password={{password}} priv=*.*:ALL state=present
+
+- name: create initial database
+  shell: cat {{repos_dir}}/webapp/config/database/isucon2.sql | mysql -u{{username}} -p{{password}}
+
+- name: import initial data
+  shell: cat {{repos_dir}}/webapp/config/database/initial_data.sql | mysql -u{{username}} -p{{password}}

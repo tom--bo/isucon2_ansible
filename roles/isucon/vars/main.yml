@@ -1,0 +1,7 @@
+---
+work_dir: /home
+repos_dir: "{{ work_dir }}/isucon2"
+branch: "isucon2"
+username: "isucon2app"
+password: "isunageruna"
+dbname: "isucon2"
