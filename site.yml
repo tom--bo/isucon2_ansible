@@ -10,4 +10,5 @@
     - mysql
     - nginx
     - php-fpm
+    - isucon
 

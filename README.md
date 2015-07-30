@@ -5,7 +5,7 @@
 -  python 2.7.6
 -  ansible 1.8.2
 -  host: mac 
--  target: Google Cloud Platform
+-  target: Google Cloud Platform / Centos6.6
 
 - 手動でSELinux切って再起動w
 /etc/sysconfig/selinux
