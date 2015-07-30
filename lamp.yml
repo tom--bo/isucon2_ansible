@@ -1,7 +1,6 @@
 ---
 - hosts: webservers
   sudo: true
-  user: root
   tasks:
     - name: Install Apache, MySQL, PHP
       yum: pkg={{ item }} state=installed
