@@ -1,0 +1,13 @@
+---
+- name: Install MySQL, Nginx, and PHP-FPM
+  hosts: test-server
+  #remote_user: root
+  # remote_user: user
+  sudo: yes
+
+  roles:
+    - common
+    - mysql
+    - nginx
+    - php-fpm
+

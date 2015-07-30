@@ -1,0 +1,13 @@
+---
+# You shouldn't need to change this.
+mysql_port: 3306
+
+# This is used for the nginx server configuration, but access to the
+# WordPress site is not restricted by a named host.
+server_hostname: www.example.com
+
+#Define Core Update Level
+#true  = Development, minor, and major updates are all enabled
+#false = Development, minor, and major updates are all disabled
+#minor = Minor updates are enabled, development, and major updates are disabled
+core_update_level: true
