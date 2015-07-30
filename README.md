@@ -11,6 +11,8 @@
 /etc/sysconfig/selinux
 SELINUX=disabled
 
+- GCPのネットワーキングのファイアウォール設定で必要なポートを開けておくこと
+
 ## 今後のTODO
 
 -  ISUCON2の環境設定
